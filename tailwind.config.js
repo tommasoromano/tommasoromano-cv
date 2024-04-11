@@ -15,6 +15,37 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      animation: {
+        hey: 'hey 2.4s infinite',
+      },
+      keyframes: {
+        hey: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '10%': {
+            transform: 'rotate(16deg)',
+          },
+          '20%': {
+            transform: 'rotate(-10deg)',
+          },
+          '30%': {
+            transform: 'rotate(16deg)',
+          },
+          '40%': {
+            transform: 'rotate(-10deg)',
+          },
+          '50%': {
+            transform: 'rotate(12deg)',
+          },
+          '60%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(0deg)',
+          },
+        },
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -25,7 +56,8 @@ module.exports = {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.pink,
+        primary: colors.sky,
+        secondary: colors.pink,
         gray: colors.gray,
       },
       typography: ({ theme }) => ({

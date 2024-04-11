@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import type { LinkProps } from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
+import { RainboWBg, RainbowText } from './Rainbow'
 
 const CustomLink = ({ href, ...rest }: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const isInternalLink = href && href.startsWith('/')
@@ -19,3 +20,16 @@ const CustomLink = ({ href, ...rest }: LinkProps & AnchorHTMLAttributes<HTMLAnch
 }
 
 export default CustomLink
+
+export const TextLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  return (
+    // <RainbowText>
+    <span className="decoration-primary font-bold underline">
+      <CustomLink href={href ? href : '#'}>
+        {children}
+        {/* {href && !href.startsWith('#') && '🔗'} */}
+      </CustomLink>
+    </span>
+    // </RainbowText>
+  )
+}
